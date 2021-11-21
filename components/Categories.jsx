@@ -16,8 +16,8 @@ const Categories = () => {
     return (
              <Tilt 
                 className="Tilt bg-opacity-0 glass-container p-8 mb-8 pb-12 mx-6 lg:mx-0" 
-                tiltMaxAngleX={15} 
-                tiltMaxAngleY={15}
+                tiltMaxAngleX={10} 
+                tiltMaxAngleY={10}
             > 
                 <div>
                     <h3 className='text-xl mb-8 font-semibold border-b pb-4'>

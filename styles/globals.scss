@@ -62,20 +62,23 @@ a {
   box-sizing: border-box;
 }
 
-.glass-container {
+//glass-container : 
+
+@mixin glassmorphism {
   background: rgba( 255, 255, 255, 0.25 );
   box-shadow: 0 8px 32px 0 rgba( 31, 38, 135, 0.37 );
   backdrop-filter: blur( 4px );
-  // -webkit-backdrop-filter: blur( 4px );
-  border-radius: 10px;
+  -webkit-backdrop-filter: blur( 4px );
   border: 1px solid rgba( 255, 255, 255, 0.18 );  
+}
+.glass-container {
+  @include glassmorphism();
+  border-radius: 10px;
   color: white;
 }
 
-.glass-overlay{
-  background: rgba( 255, 255, 255, 0.5 );
-  box-shadow: 0 8px 32px 0 rgba( 31, 38, 135, 0.37 );
-  backdrop-filter: blur( 4px );
-  -webkit-backdrop-filter: blur( 4px );
-  border: 1px solid rgba( 255, 255, 255, 0.18 );
+.recent-post:hover{
+  @include glassmorphism();
+  border-radius: 10px;
+  color: #db2777
 }

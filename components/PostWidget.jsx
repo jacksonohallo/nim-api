@@ -6,31 +6,31 @@ import Image from 'next/image'
 import Tilt from 'react-parallax-tilt';
 
 const PostWidget = ({ categories, slug }) => {
-    const [relatedPosts, setRelatedPosts] = useState([])
+    const [displayPosts, setDisplayPosts] = useState([])
 
     useEffect(()=> {
         if(slug) {
             getSimilarPosts(categories, slug)
-                .then((result) => setRelatedPosts(result))
+                .then((result) => setDisplayPosts(result))
         } else {
             getRecentPosts()
-                .then((result) => setRelatedPosts(result))
+                .then((result) => setDisplayPosts(result))
         }
     },[slug])
 
     return (
             <Tilt 
                 className="Tilt bg-opacity-0 glass-container p-8 mb-8 mx-6 lg:mx-0" 
-                tiltMaxAngleX={15} 
-                tiltMaxAngleY={15}
+                tiltMaxAngleX={10} 
+                tiltMaxAngleY={10}
             >
                 <div className="inner-Tilt">
                     <h3 className='text-xl mb-8 font-semibold border-b pb-4'>
                         {slug? 'Related Posts' : 'Recent Posts'}
                     </h3>
-                    {relatedPosts.map((post) => (
-                        <div key={post.title} className="flex items-center w-full mb-4">
-                            <div className="w-16 flex-none">
+                    {displayPosts.map((post) => (
+                        <div key={post.title} className="flex items-center justify-center w-full mb-4">
+                            <div className="w-16 flex ">
                                 <Image 
                                     loader={() => post.featuredImage.url}
                                     src={post.featuredImage.url} 
@@ -40,7 +40,7 @@ const PostWidget = ({ categories, slug }) => {
                                     className="align-middle rounded-full"
                                 />
                             </div>
-                            <div className="flex-grow ml-4">
+                            <div className="flex-grow ml-4 py-2 recent-post px-2">
                                 <p className="text-white-500 font-xs">
                                     {moment(post.createdAt).format('MMM DD, YYYY')}
                                 </p>
