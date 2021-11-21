@@ -15,7 +15,7 @@ export default function Home({ posts }) {
       <div className="grid grid-cols-1 lg:grid-cols-12 gap-12">
         {/* PostCard  */}
         <div className="lg:col-span-8 col-span-1">
-          {posts.map((post, index) => <PostCard post={post.node} key={post.title} />)}
+          {posts.map((post, index) => <PostCard post={post.node} key={index} />)}
         </div>
         {/* SideBar : PostWidget & Categories */}
         <div className="lg:col-span-4 col-span-1">

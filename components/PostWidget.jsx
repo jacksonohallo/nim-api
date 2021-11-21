@@ -1,6 +1,6 @@
 import React, { useState, useEffect } from 'react'
 import moment from 'moment'
-import Link from 'next/Link'
+import Link from 'next/link'
 import { getRecentPosts, getSimilarPosts } from '../services'
 import Image from 'next/image'
 import Tilt from 'react-parallax-tilt';
@@ -32,6 +32,7 @@ const PostWidget = ({ categories, slug }) => {
                         <div key={post.title} className="flex items-center justify-center w-full mb-4">
                             <div className="w-16 flex ">
                                 <Image 
+                                    unoptimized
                                     loader={() => post.featuredImage.url}
                                     src={post.featuredImage.url} 
                                     alt={post.title}

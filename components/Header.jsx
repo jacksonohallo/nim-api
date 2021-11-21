@@ -1,5 +1,5 @@
 import React, {useState, useEffect} from 'react'
-import Link from 'next/Link'
+import Link from 'next/link'
 import * as DropdownMenu from '@radix-ui/react-dropdown-menu';
 import { AiOutlinePicCenter } from "react-icons/ai";
 import { FaPaw } from "react-icons/fa";
@@ -42,8 +42,8 @@ const Header = () => {
                             >
                                 <DropdownMenu.Arrow className="text-white"/>
                                 {categories.map((category) => (
-                                    <DropdownMenu.Item className="p-2 hover:bg-pink-500 hover:text-white outline-none rounded-lg">
-                                        <Link key={category.slug} href={`/category/${category.slug}`}>
+                                    <DropdownMenu.Item key={category.slug} className="p-2 hover:bg-pink-500 hover:text-white outline-none rounded-lg">
+                                        <Link href={`/category/${category.slug}`}>
                                             <span className='mt-2 align-middle text-sm cursor-pointer'>
                                                 {category.name}
                                             </span>

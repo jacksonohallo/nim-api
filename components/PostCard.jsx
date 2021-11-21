@@ -1,16 +1,16 @@
 import React from 'react'
 import moment from 'moment'
-import Link from 'next/Link'
+import Link from 'next/link'
 import Image from 'next/image'
 import { AiOutlineCalendar } from 'react-icons/ai'
 
 const PostCard = ({ post }) => {
 
-    console.log(post);
     return (
         <div className="bg-opacity-0 shadow-lg rounded-lg p-0 lg:p-8 pb-12 mb-8 mx-6 glass-container lg:mx-0">
             <div className="relative overflow-hiidden shadow-md pb-80 mb-6">
                 <Image 
+                    unoptimized
                     loader={() => post.featuredImage.url}
                     src={post.featuredImage.url}
                     alt={post.title}
@@ -28,6 +28,7 @@ const PostCard = ({ post }) => {
                 <div className="flex lg:flex-row flex-col items-start justify-start lg:space-x-12 mb-4">
                     <div className="flex flex-row mb-4 lg:mb-0 w-full lg:w-auto">
                         <Image 
+                            unoptimized
                             loader={() => post.author.photo.url}
                             src={post.author.photo.url}
                             alt={post.author.name} 
