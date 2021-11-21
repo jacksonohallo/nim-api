@@ -1,5 +1,8 @@
 import React, {useState, useEffect} from 'react'
 import Link from 'next/Link'
+import * as DropdownMenu from '@radix-ui/react-dropdown-menu';
+import { AiOutlinePicCenter } from "react-icons/ai";
+import { FaPaw } from "react-icons/fa";
 
 import { getCategories } from '../services'
 
@@ -24,14 +27,42 @@ const Header = () => {
                         </Link>
                     </div>
 
+                    {/* Categories  */}
                     <div className="hidden md:float-left md:contents">
-                        {categories.map((category) => (
-                            <Link key={category.slug} href={`/category/${category.slug}`}>
-                                <span className='md:float-right mt-2 align-middle text-white ml-4 font-semibold cursor-pointer'>
-                                    {category.name}
-                                </span>
-                            </Link>
-                        ))}
+                        <DropdownMenu.Root modal={false}>
+                            <DropdownMenu.Trigger
+                                className="md:float-right flex items-center text-white glass-container p-2 px-4"
+                            >
+                                <span> Categories | </span> 
+                                <AiOutlinePicCenter />
+                            </DropdownMenu.Trigger>
+                            <DropdownMenu.Content
+                                sideOffset={5}
+                                className="bg-white rounded-lg p-2"
+                            >
+                                <DropdownMenu.Arrow className="text-white"/>
+                                {categories.map((category) => (
+                                    <DropdownMenu.Item className="p-2 hover:bg-pink-500 hover:text-white outline-none rounded-lg">
+                                        <Link key={category.slug} href={`/category/${category.slug}`}>
+                                            <span className='mt-2 align-middle text-sm cursor-pointer'>
+                                                {category.name}
+                                            </span>
+                                        </Link>
+                                    </DropdownMenu.Item>
+                                ))}
+
+                            </DropdownMenu.Content>
+                        </DropdownMenu.Root> 
+                    </div>
+
+                    {/* About me */}
+                    <div className="md:float-right flex items-center text-white glass-container p-2 px-4 mx-2">
+                        <Link href="/about">
+                            <span className='align-middle cursor-pointer px-2'>
+                                About me   
+                            </span>
+                        </Link>
+                            <FaPaw />
                     </div>
                 </div>
             </div>

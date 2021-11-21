@@ -6,6 +6,7 @@
     "start": "next start"
   },
   "dependencies": {
+    "@radix-ui/react-dropdown-menu": "^0.1.1",
     "graphql": "^16.0.1",
     "graphql-request": "^3.6.1",
     "html-react-parser": "^1.4.0",
@@ -15,6 +16,7 @@
     "react-dom": "^17.0.2",
     "react-icons": "^4.3.1",
     "react-multi-carousel": "^2.6.5",
+    "react-parallax-tilt": "^1.5.78",
     "react-tsparticles": "^1.37.4",
     "sass": "^1.43.4"
   },
