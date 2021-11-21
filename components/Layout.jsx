@@ -1,5 +1,5 @@
 import React from 'react'
-import { Header } from './'
+import { Header } from '.'
 import Particles from "react-tsparticles";
 import tsParticlesConfig from '../data/tsParticles.json'
 
