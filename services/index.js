@@ -34,6 +34,6 @@ export const getPosts = async () => {
 
     const result = await request(graphqlAPI, query)
 
-    return result.SpeechRecognitionResultList.postConnection.edges
+    return result.postsConnection.edges
 }
 
