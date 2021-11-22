@@ -129,7 +129,7 @@ export const getCategories = async () => {
   return result.categories
 }
 
-//Fetch call to post a comment :
+//request to post a comment :
 export const submitComment = async (obj) => {
   const result = await fetch('/api/comments', { 
     method: 'POST',
