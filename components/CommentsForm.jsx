@@ -1,5 +1,7 @@
 import React, {useState, useEffect, useRef} from 'react'
 
+import { submitComment } from '../services'
+
 const CommentsForm = ({slug}) => {
     const [error, setError] = useState(false)
     const [localStorage, setLocalStorage] = useState(null)
@@ -8,6 +10,11 @@ const CommentsForm = ({slug}) => {
     const nameEl = useRef()
     const emailEl = useRef()
     const storeDataEl = useRef()
+
+    useEffect(()=> {
+        nameEl.current.value = window.localStorage.getItem('name')
+        emailEl.current.value = window.localStorage.getItem('email')
+    }, [])
 
     const handleCommentSubmission = () => {
         setError(false);
@@ -25,17 +32,27 @@ const CommentsForm = ({slug}) => {
         const commentObj = { name, email, comment, slug }
 
         if(storeData) {
-            localStorage.setItem('name', name)
-            localStorage.setItem('email', email)
+            window.localStorage.setItem('name', name)
+            window.localStorage.setItem('email', email)
         } else {
-            localStorage.removeItem('name', name)
-            localStorage.removeItem('email', email) 
+            window.localStorage.removeItem('name', name)
+            window.localStorage.removeItem('email', email) 
         }
+
+        submitComment(commentObj)
+            .then((res) => {
+                setShowSuccesMessage(true)
+                
+                setTimeout(() => {
+                    setShowSuccesMessage(false)
+                    
+                }, 3000);
+            })
     }
 
     return (
         <div className="bh-opacity-0 glass-container p-8 pb-12 mb-8">
-            <h3 className="text-xl mb-8 font-semibold border-b pb-4">Comments Form</h3>
+            <h3 className="text-xl mb-8 font-semibold border-b pb-4">Leave a Reply</h3>
             {/* Textarea  */}
             <div className="grid grid-col-1 gap-4 mb-4">
                 <textarea 
