@@ -3,6 +3,7 @@ import moment from 'moment'
 import Link from 'next/link'
 import Image from 'next/image'
 import { AiOutlineCalendar } from 'react-icons/ai'
+import { BiCategory } from "react-icons/bi";
 
 const PostCard = ({ post }) => {
 
@@ -49,6 +50,16 @@ const PostCard = ({ post }) => {
                     </div>  
                 </div>
                 <p className="text-left text-lg text-gray-70 font-normal  mb-8">{post.excerpt}</p>
+                <div className="text-left mb-6 flex sm:space-x-2 spacing-y-2 flex-wrap">
+                    {post.categories.map((category) => (  
+                        <Link key={category.slug} href={`/category/${category.slug}`}>
+                            <span className="flex items-center hover:rounded-full cursor-pointer category px-4 py-2 rounded-full text-white text-md">
+                                <BiCategory className="inline mr-2"/>
+                                {category.name}                                
+                            </span>
+                        </Link>  
+                    ))}
+                </div>
                 <div className="text-left">
                     <Link href={`/post/${post.slug}`}>
                         <span className="transition duration-500 transform hover:-translate-y-1 inline-block bg-pink-600 text-lg font-medium rounded-full text-white px-8 py-3 cursor-pointer">
@@ -56,6 +67,7 @@ const PostCard = ({ post }) => {
                         </span>
                     </Link>
                 </div>
+                
             </div>
         </div>
     )
