@@ -46,7 +46,7 @@ const About = () => {
             />
             <div className="ml-4 my-2">
                 <h2 className="text-3xl">Hi!</h2>
-                <h2 className='text-xl mb-8'>I am <span className="text-pink-400">Gurpreet</span>  and this is my blog</h2>
+                <h2 className='text-xl mb-8'>I am <a href="https://github.com/gurpreet-legend" target="_blank" rel="noreferrer noopener" className="text-pink-400 hover:underline">Gurpreet</a>  and this is my blog</h2>
                 <p className='text-lg mb-10'>This is my little pandora's box where I will share all of my learnings, experiences and some of my projects as well<br/>So, stay tuned ...</p>
                 <div className="contact-section mb-8">
                     <h1 className="text-2xl text-pink-400">Contact me</h1>
@@ -61,7 +61,7 @@ const About = () => {
                     </div>
                 </div>
                 <a 
-                    href="#"
+                    href="https://github.com/gurpreet-legend"
                     target="_blank"
                     className="text-2xl text-pink-400"
                     rel="noreferrer noopener"
