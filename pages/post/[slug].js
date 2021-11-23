@@ -1,10 +1,24 @@
 import React from 'react'
+import { useRouter } from 'next/router'
+import Loader from "react-loader-spinner";
 
 import { getPosts, getPostDetails } from '../../services'
 
 import {PostDetail, Categories, PostWidget, Author, Comments, CommentsForm} from '../../components'
 
 const PostDetails = ({post}) => {
+
+    const router = useRouter()
+
+    if(router.isFallback){
+        return (<Loader 
+            type="Audio" 
+            color="#DB2777" 
+            height={80} 
+            width={80} 
+            />
+        )
+    }
     
     return (
         <div className="container mx-auto px-10 mb-8">
@@ -46,6 +60,6 @@ export async function getStaticPaths() {
     
     return {
         paths: slugs,
-        fallback: false
+        fallback: true
     }
 } 
