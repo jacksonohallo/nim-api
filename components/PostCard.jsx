@@ -9,7 +9,7 @@ const PostCard = ({ post }) => {
 
     return (
         <div className="bg-opacity-0 shadow-lg rounded-lg p-0 lg:p-8 pb-12 mb-8 mx-6 glass-container lg:mx-0">
-            <div className="relative overflow-hiidden shadow-md pb-80 mb-6">
+            <div className="relative overflow-hidden shadow-md pb-80 mb-6">
                 <Image 
                     unoptimized
                     loader={() => post.featuredImage.url}
