@@ -22,7 +22,7 @@ const Header = () => {
                     <div className="md:float-left inline-block md:mb-0 mb-4">
                         <Link href="/">
                             <span className="cursor-pointer font-bold text-4xl text-white">
-                                Expresso
+                             Geospatial World
                             </span>
                         </Link>
                     </div>
