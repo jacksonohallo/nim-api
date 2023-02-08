@@ -76,8 +76,8 @@ const PostDetail = ({ post }) => {
                             height="35px"
                             width="35px"
                             className="align-middle rounded-full object-cover"
-                        />
-                        <p className="inline align-middle ml-2 font-medium text-lg">{post.author.name}</p>
+                        /> 
+                         <p className="inline align-middle ml-2 font-medium text-lg">{post.author.name}</p>
                     </div>
                     {/* Date  */}
                     <div className="flex flex-row font-medium">

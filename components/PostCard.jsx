@@ -31,7 +31,7 @@ const PostCard = ({ post }) => {
                         <Image 
                             unoptimized
                             loader={() => post.author.photo.url}
-                            src={post.author.photo.url}
+                             src={post.author.photo.url}
                             alt={post.author.name} 
                             height="35px"
                             width="35px"

@@ -7,10 +7,10 @@ export default function Home({ posts }) {
     <div className="container mx-auto px-1 mb-8">
       {/* Header */}
       <Head>
-        <title>Expresso : A blogging website</title>
+        <title>nim : A blogging website</title>
         <link rel="icon" href="/favicon.ico" />
       </Head>
-      
+    
       {/* Body  */}
       <div className="grid grid-cols-1 lg:grid-cols-12 gap-12">
         {/* PostCard  */}
