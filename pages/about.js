@@ -15,17 +15,17 @@ const contacts = [
     },
     {
         name: 'instagram',
-        link: 'https://www.instagram.com/gurpreet_legend/',
+        link: 'https://www.instagram.com',
         icon: <FaInstagram/>
     },
     {
         name: 'twitter',
-        link: 'https://twitter.com/Gurpreet_legend',
+        link: 'https://twitter.com',
         icon: <FaTwitter/>
     },
     {
         name: 'facebook',
-        link: 'https://www.facebook.com/losty.singh/',
+        link: 'https://www.facebook.com',
         icon: <FaFacebook/>
     },
 
@@ -38,7 +38,7 @@ const About = () => {
                 <FaPaw className="inline text-pink-400"/><h1>About me</h1>
             </div>
             <Image 
-                src="/me.jpeg" 
+                src="/mee.jpg" 
                 alt="Gurpreet" 
                 width="100" 
                 height="100" 
@@ -46,8 +46,8 @@ const About = () => {
             />
             <div className="ml-4 my-2">
                 <h2 className="text-3xl">Hi!</h2>
-                <h2 className='text-xl mb-8'>I am <a href="https://github.com/gurpreet-legend" target="_blank" rel="noreferrer noopener" className="text-pink-400 hover:underline">Gurpreet</a>  and this is my blog</h2>
-                <p className='text-lg mb-10'>This is my little pandora's box where I will share all of my learnings, experiences and some of my projects as well<br/>So, stay tuned ...</p>
+                <h2 className='text-xl mb-8'>I am <a href="https://github.com" target="_blank" rel="noreferrer noopener" className="text-pink-400 hover:underline">Nimrod Kibet</a>  and this is my blog</h2>
+                <p className='text-lg mb-10'>I’m a passionate Geospatial Analyst and an aspiring full stack developer.<br/>So, stay tuned ...</p>
                 <div className="contact-section mb-8">
                     <h1 className="text-2xl text-pink-400">Contact me</h1>
                     <div className="flex gap-4 my-3">
@@ -61,7 +61,7 @@ const About = () => {
                     </div>
                 </div>
                 <a 
-                    href="https://github.com/gurpreet-legend"
+                    href="www.nimrodkibet.com"
                     target="_blank"
                     className="text-2xl text-pink-400"
                     rel="noreferrer noopener"
